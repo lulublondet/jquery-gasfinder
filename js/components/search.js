@@ -67,7 +67,7 @@ else {
         	origin: [position.coords.latitude, position.coords.longitude],
         	destination: [lat,long],
         	travelMode: 'driving',
-        	strokeColor: '#aaa',
+        	strokeColor: 'green',
         	strokeOpacity: 1,
         	strokeWeight: 6
       		});  

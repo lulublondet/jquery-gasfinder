@@ -18,20 +18,16 @@ header .fa-chevron-left {
   margin-right: 16px;
 }
 
-
 span.glyphicon {
-
   font-size: 1.2em;
-
-
 }
-
 
 a {
   float: right;
 }
 
 #map {
+      margin-top: 10px;
       width: 400px;
       height: 400px;
       background-color: green;
