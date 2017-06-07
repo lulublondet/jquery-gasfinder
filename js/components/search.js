@@ -1,13 +1,19 @@
 'use strict';
 var reRender = function(resultado){
-console.log(resultado.length);
 
 if(resultado.length == 0){
 	alert("Lo sentimos, No hay grifos en ese distrito!!");
 }
-else {
 
-var $container = $('<div class="container"></div>');
+else {
+		var uno = resultado[0].lat;
+		var dos = resultado[0].long;
+		 initMapa(uno,dos);
+
+
+
+
+		var $container = $('<div class="container"></div>');
 		var $row = $('<div class="row"></div>');
 		var $col = $('<div class="col-xs-12 col-md-12"></div>');
 		var $a = $('<a href="mapa.html" class="glyphicon glyphicon-export"></a>');	
@@ -23,9 +29,28 @@ var $container = $('<div class="container"></div>');
 				.append($span);
 			$('.detalle').first().show('slow');	
 			$('.detalle').prepend($container);	
-	return $('.detalle'); 		
+
+	$a.on("click",function(e){
+	 e.preventDefault();
+
+	window.location = "mapa.html";
+
+
+})	;
+
+
+	return $('.detalle'); 
+
+
+
+
 }
+
+
+
 }
+
+
 
 
 var Search = function() {
@@ -52,7 +77,9 @@ var Search = function() {
 	$form.on('submit',function(e){
 		e.preventDefault();
 		var resultado =	filterByDistrict(state.stations,$input.val())
+			$input.val("");
 			reRender(resultado);
+			
 	});
 
 

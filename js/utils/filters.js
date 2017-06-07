@@ -14,6 +14,7 @@ jQuery.each(stations,function(i,val){
 
 	return arr;
 
+	initMap(arr);
 };
 
 	
