@@ -16,6 +16,7 @@ else {
 		const $a = $('<a href="mapa.html" class="glyphicon glyphicon-export"></a>');	
 		const $h2 = $('<h2 class="nombreEstacion">'+resultado[0].name+'</h2>');
 		const $p = $('<p>'+resultado[0].address+'</p>');
+		const $produc = $('<p>'+'productos :' +resultado[0].products+'</p>');
 		const $span = $('<span>'+resultado[0].district+'</span>');	
 		const $mapa = $('<div id="map"></div');
 	
@@ -26,6 +27,7 @@ else {
 				.append($a)
 				.append($h2)
 				.append($p)
+				.append($produc)
 				.append($span);
 
 			$('.detalle').children().hide('slow');		
