@@ -22,6 +22,12 @@ Ver más detalle de la especificación funcional en el siguiente enlace
 2. Construir la pantalla que muestre el detalle de la estación
 3. Hacer que se vea bien en las diferentes vistas
 
+## Como me veo en desktop
+![gif-final](img/20170607_121349.gif)
+
+## En mobile
+![gif-final](img/20170607_121047.mp4)
+
 ## Patrón de diseño de la aplicación
 
 La principal característica de la aplicación es el uso del patrón de composición de componentes. Los componentes son entidades independientes que retornan elementos jquery los cuales se adjunta al dom para mostrarse.
@@ -37,6 +43,7 @@ Se está incluyendo las siguientes librerias:
 - gmaps ([https://hpneo.github.io/gmaps/](https://hpneo.github.io/gmaps/))
 - font awesome ([http://fontawesome.io/](http://fontawesome.io/))
 - jquery ([https://jquery.com/](https://jquery.com/))
+- Boostrap
 
 ## Instrucciones
 
