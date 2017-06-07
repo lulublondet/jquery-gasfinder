@@ -7,9 +7,9 @@ if(resultado.length == 0){
 }
 
 else {
-		var uno = resultado[0].lat;
-		var dos = resultado[0].long;
-		 initMapa(uno,dos);
+		var lat = resultado[0].lat;
+		var long = resultado[0].long;
+		
 		var $container = $('<div class="container"></div>');
 		var $row = $('<div class="row"></div>');
 		var $col = $('<div class="col-xs-12 col-md-12"></div>');
@@ -27,8 +27,16 @@ else {
 				.append($span);
 			$('.detalle').children().hide('slow');		
 			$('.detalle').first().show('slow');	
-			$('.detalle').prepend($container);	
+			$('.detalle').prepend($container);
+			$col.append($mapa);	
 			$mapa.insertAfter( $( ".detalle" ) );
+
+		var map = new GMaps({
+    	 div: $mapa[0],
+    	 lat: lat,
+    	 lng: long
+	});
+
 
 	$a.on("click",function(e){
 	 e.preventDefault();
