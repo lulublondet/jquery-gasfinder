@@ -3,16 +3,13 @@ var reRender = function(resultado){
 
 if(resultado.length == 0){
 	alert("Lo sentimos, No hay grifos en ese distrito!!");
+
 }
 
 else {
 		var uno = resultado[0].lat;
 		var dos = resultado[0].long;
 		 initMapa(uno,dos);
-
-
-
-
 		var $container = $('<div class="container"></div>');
 		var $row = $('<div class="row"></div>');
 		var $col = $('<div class="col-xs-12 col-md-12"></div>');
@@ -20,6 +17,7 @@ else {
 		var $h2 = $('<h2 class="nombreEstacion">'+resultado[0].name+'</h2>');
 		var $p = $('<p>'+resultado[0].address+'</p>');
 		var $span = $('<span>'+resultado[0].district+'</span>');	
+		var $mapa = $('<div id="map"></div')
 			$container.append($row);
 			$row.append($col);
 			$col
@@ -27,25 +25,20 @@ else {
 				.append($h2)
 				.append($p)
 				.append($span);
+			$('.detalle').children().hide('slow');		
 			$('.detalle').first().show('slow');	
 			$('.detalle').prepend($container);	
+			$mapa.insertAfter( $( ".detalle" ) );
 
 	$a.on("click",function(e){
 	 e.preventDefault();
 
-	window.location = "mapa.html";
-
-
 })	;
 
-
-	return $('.detalle'); 
-
-
+return $('.detalle'); 
 
 
 }
-
 
 
 }
@@ -69,9 +62,6 @@ var Search = function() {
 				.append($input);		
 	$divInputGroupAddon.append($spanIcon);			
 	
-	$input.on('click',function(){
-		$('.detalle').children().hide('slow');	
-	});
 
 	
 	$form.on('submit',function(e){
